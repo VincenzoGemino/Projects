@@ -1,0 +1,24 @@
+body{
+  background-color: rgb(70,40,40);
+  font-family: papyrus, sans-serif;
+  color: rgb(40,200,20); /*colore del testo*/
+  font-size: 20 rem;
+  text-shadow: 0.25px 0.25px 3px cyan;
+  border-top: 0.25px dashed cyan;
+}
+
+h1, p.sub-title, #survey-form{
+  text-align: center;
+}
+
+label{
+  display: block;
+  margin: auto;
+}
+input{
+  margin: auto;
+}
+#name, #email, #number, #dropdown, #sumbit{
+  width: 30%;
+  text-align: center;
+}
