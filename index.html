@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="title"> Gemino Survey Form
+  </h1>
+  <p class="sub-title" id="description">
+    Questo è un bellissimo questionario fatto dal grandissimo
+  </p>
+  <form id="survey-form">
+    <div>
+      <label id="name-label" for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Enter your Name" required="">
+     </div>
+    <div>
+    <label id="email-label" for="email">Email</label>
+    <input id="email" type="email" name="email" placeholder="Enter your Email" required="">
+    </div>
+    <div>
+      <label id="number-label" for="number">
+      Age (optional)
+      </label>
+      <input id="number" type="number" min="18" max="80" placeholder="Enter your Age">
+    </div>
+    <div>
+       <p id="description">Select what best describes your role in your society</p>
+      <Select id="dropdown">
+       <option disabled="" selected="" value="">Select</option>
+       <option value="student">Student</option>
+       <option value="employee">Employee</option>
+       <option value="employer">Employer</option>
+       <option value="retired">Retired</option>
+       <option value="looking">Looking for a job</option>
+       <option value="self-employee">Self-employee</option>
+       <option value="notOption">Prefer not to say</option>
+       <option value="dead">Dead</option>
+      </Select>
+    </div>
+    <div>
+      <p id="description">
+        select which one represent your current level of satisfaction regarding your role
+      </p>
+      <label>
+        <input class="input-radio" name="radio" value="notknown" type="radio" checked=""> i don't know
+      </label>
+      <label>
+        <input class="input-radio" type="radio" name="radio" value="notCare"> i don't care
+      </label>
+      <label>
+        <input class="input-radio" name="radio" type="radio" value="satisfied"> satisfied
+      </label>
+      <label>
+        <input class="input-radio" name="radio" type="radio" value="notSatisfied"> not satisfied
+      </label>
+    </div>
+    <div>
+      <p>Choose one or more options that you want to change in your life... </p>
+      <label> work
+        <input type="checkbox" value="work">
+        </input>
+      </label> 
+      <label> friends
+        <input type="checkbox" value="friends">
+        </input>
+      </label>
+      <label> partner
+        <input type="checkbox" value="partner">
+        </input>
+      </label>
+      <label> i don't know
+        <input type="checkbox" value="unkown">
+        </input>
+      </label>
+    </div>
+
+    <div>
+      <p>Choose one option...</p>
+      <label>
+        <input class="input-radio" name="radio" value="now" type="radio" checked=""> right now
+      </label>
+      <label>
+        <input class="input-radio" type="radio" name="radio" value="months"> in the next months
+      </label>
+      <label>
+        <input class="input-radio" name="radio" type="radio" value="year"> next year
+      </label>
+      <label>
+        <input class="input-radio" name="radio" type="radio" value="unknown"> i don't know
+      </label>
+    </div>
+
+    <div>
+      <p>
+        If you want, write something down below
+      </p>
+      <textarea placeholder="Write here..."></textarea>
+    </div>
+    <div>
+      <button id="submit" type="sumbit">Submit
+    </div>
+
+    </form>
+
+
+  </body>
+</html>
