@@ -1,2 +1,2 @@
 # SurveyForm
-This repository contains the code for the freecodecamp.org Survey form project
+This repository contains the projects from the freecodecamp.org
