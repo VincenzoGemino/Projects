@@ -1,10 +1,10 @@
 body{
   background-color: #285943;
   font-family: papyrus, sans-serif;
-  color: rgb(40,200,20); /*colore del testo*/
+  color: #8CD790; /*colore del testo*/
   font-size: 20 rem;
-  text-shadow: 0.25px 0.25px 3px cyan;
-  border-top: 0.25px dashed cyan;
+  text-shadow: 0.25px 0.25px 3px #AAFCB8;
+  border-top: 0.25px dashed #AAFCB8;
 }
 
 h1, p.sub-title, #survey-form{
