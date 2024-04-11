@@ -4,10 +4,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 id="title"> Gemino Survey Form
+  <h1 id="title"> Gemino's Survey Form
   </h1>
   <p class="sub-title" id="description">
-    Questo è un bellissimo questionario fatto dal grandissimo
+    Survey form example
   </p>
   <form id="survey-form">
     <div>
@@ -25,48 +25,59 @@
       <input id="number" type="number" min="18" max="80" placeholder="Enter your Age">
     </div>
     <div>
-       <p id="description">Select what best describes your role in your society</p>
+       <p id="description">where would you like to work?</p>
       <Select id="dropdown">
        <option disabled="" selected="" value="">Select</option>
-       <option value="student">Student</option>
-       <option value="employee">Employee</option>
-       <option value="employer">Employer</option>
-       <option value="retired">Retired</option>
-       <option value="looking">Looking for a job</option>
-       <option value="self-employee">Self-employee</option>
-       <option value="notOption">Prefer not to say</option>
-       <option value="dead">Dead</option>
+       <option value="student">Turin</option>
+       <option value="employee">Milan</option>
+       <option value="employer">London</option>
+       <option value="retired">Berlin</option>
+       <option value="looking">Paris</option>
+       <option value="self-employee">Madrid</option>
+       <option value="notOption">Remote</option>
+       <option value="dead">Prefer not to say</option>
       </Select>
     </div>
     <div>
       <p id="description">
-        select which one represent your current level of satisfaction regarding your role
+        Select what you care about the most while working
       </p>
       <label>
-        <input class="input-radio" name="radio" value="notknown" type="radio" checked=""> i don't know
+        <input class="input-radio" name="radio" value="relaxed" type="radio" checked=""> The environment needs to be relaxed and easy-going
       </label>
       <label>
-        <input class="input-radio" type="radio" name="radio" value="notCare"> i don't care
+        <input class="input-radio" type="radio" name="radio" value="competitive"> The environment needs to be competitive
       </label>
       <label>
-        <input class="input-radio" name="radio" type="radio" value="satisfied"> satisfied
+        <input class="input-radio" name="radio" type="radio" value="project"> Working in a team focusing on the project
       </label>
       <label>
-        <input class="input-radio" name="radio" type="radio" value="notSatisfied"> not satisfied
+        <input class="input-radio" name="radio" type="radio" value="team"> Working in a team focusing on working better as a whole
+      </label>
+      <label>
+        <input class="input-radio" name="radio" type="radio" value="unknown"> I don't know
       </label>
     </div>
     <div>
-      <p>Choose one or more options that you want to change in your life... </p>
-      <label> work
-        <input type="checkbox" value="work">
+      <p>What are your needs in a company? </p>
+      <label> high salary
+        <input type="checkbox" value="salary">
         </input>
       </label> 
-      <label> friends
-        <input type="checkbox" value="friends">
+      <label> benefits
+        <input type="checkbox" value="benefits">
         </input>
       </label>
-      <label> partner
-        <input type="checkbox" value="partner">
+      <label> interesting projects
+        <input type="checkbox" value="projects">
+        </input>
+      </label>
+       <label> going abroad
+        <input type="checkbox" value="abroad">
+        </input>
+      </label>
+       <label> networking
+        <input type="checkbox" value="networking">
         </input>
       </label>
       <label> i don't know
@@ -76,15 +87,15 @@
     </div>
 
     <div>
-      <p>Choose one option...</p>
+      <p>Choose one option from these different benefits:</p>
       <label>
-        <input class="input-radio" name="radio" value="now" type="radio" checked=""> right now
+        <input class="input-radio" name="radio" value="now" type="radio" checked="">medical insurance
       </label>
       <label>
-        <input class="input-radio" type="radio" name="radio" value="months"> in the next months
+        <input class="input-radio" type="radio" name="radio" value="months"> company car
       </label>
       <label>
-        <input class="input-radio" name="radio" type="radio" value="year"> next year
+        <input class="input-radio" name="radio" type="radio" value="year"> food vouchers
       </label>
       <label>
         <input class="input-radio" name="radio" type="radio" value="unknown"> i don't know
