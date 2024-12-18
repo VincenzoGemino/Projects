@@ -1,0 +1,33 @@
+piano 0 bottone 2 statoB 1
+piano 1 bottone 2 statoB 1
+piano 2 bottone -1 statoB 0
+
+
+
+check bottone  
+    se attivo
+        bottone occupato
+    se disattivo
+        richiesta bottone
+        attivo bottone
+
+check ascensore
+    se fermo
+        se arrivato
+            sblocco ascensore
+            sblocco bottone
+            apro le porte
+            non arrivato
+
+        se non arrivato
+            prendo bottone
+            pianoFinale = bottone
+            pianoSuccessivo = pianoCorrente +- 1
+            chiudo le porte
+    se in movimento
+        se pianoCorrente = pianoFinale
+            fermo ascensore
+            attivo arrivato
+        se piano corrente != pianoFinale
+            pianoCorrente = pianoSuccessivo
+            pianoSuccessivo = pianoCorrente +- 1

@@ -19,10 +19,24 @@ void buttonCheck(int *isMoving, int *button, int *buttonState){
         printf("Elevator arrived... Freeing button\n");
         *button = -1;
         *buttonState = 0;
+        buttonCheck(isMoving, button, buttonState);
         break;
     default:
         printf("Elevator free-falling...\n");
         break;
+    }
+}
+
+void movingElevator(int *button, int *isMoving, int *curr_floor, int *next_floor){
+    if(*curr_floor == *button){
+        printf("Elevator arrived... Opening doors\n");
+        *isMoving = 2;
+    }
+    if(*curr_floor != *next_floor){
+        printf("Elevator moving: %d -> %d\n", curr_floor, next_floor);
+        *curr_floor = *next_floor;
+        *next_floor = *button;
+        
     }
 }
 
