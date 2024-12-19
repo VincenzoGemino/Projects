@@ -1,33 +1,64 @@
-piano 0 bottone 2 statoB 1
-piano 1 bottone 2 statoB 1
-piano 2 bottone -1 statoB 0
+bottone prenotato esterno = -1;
+bottone prenotato interno = -1;
+piano = 0;
+stato ascensore = 0;
+stato prenotato esterno = 0;
+stato prenotato interno = 0;
+
+check prenotato esterno
+check prenotato interno
+se 0
+    richiesta input
+se 1
+    check stato ascensore
+    se 0
+        check stato prenotato interno
+        se 0
+            check stato prenotato esterno
+            se 0
+                idle
+            se 1
+                stato prenotato interno 0
+                check bottone prenotato esterno, piano
+                se uguali
+                    apertura porta
+                    carico persone
+                    stato prenotato esterno 0
+                se diversi
+                    |piano|+1
+                    stato ascensore 1
+        se 1
+            stato prenotato esterno 0
+            check bottone prenotato interno, piano
+            se uguali
+                apertura porta
+                scarico persone
+                stato prenotato interno 0
+            se diversi
+                |piano|+1
+                stato ascensore 1
+    se 1
+        check stato prenotato interno
+        se 0
+            check stato prenotato esterno
+            se 0
+                Errore
+            se 1
+                check bottone prenotato esterno, piano
+                se uguali
+                    ascensore prenotato arrivato
+                    stato ascensore 0
+                se diversi
+                    |piano|+1
+        se 1
+            check bottone prenotato interno, piano
+                se uguali
+                    ascensore prenotato arrivato
+                    stato ascensore 0
+                se diversi
+                    |piano|+1
 
 
+                
 
-check bottone  
-    se attivo
-        bottone occupato
-    se disattivo
-        richiesta bottone
-        attivo bottone
 
-check ascensore
-    se fermo
-        se arrivato
-            sblocco ascensore
-            sblocco bottone
-            apro le porte
-            non arrivato
-
-        se non arrivato
-            prendo bottone
-            pianoFinale = bottone
-            pianoSuccessivo = pianoCorrente +- 1
-            chiudo le porte
-    se in movimento
-        se pianoCorrente = pianoFinale
-            fermo ascensore
-            attivo arrivato
-        se piano corrente != pianoFinale
-            pianoCorrente = pianoSuccessivo
-            pianoSuccessivo = pianoCorrente +- 1
