@@ -4,11 +4,10 @@ Competenze: selezione/filtro dati mediante ricerca in tabelle di nomi/stringhe, 
 Questo esercizio è stato già proposto nel Lab. 6 di Tecniche di Programmazione dell’a.a. 2023/24.
 Un'azienda di trasporti urbani traccia i propri automezzi in un file di log (file testuale di nome corse.txt).
 Il file è organizzato come segue:
- sulla prima riga, un intero positivo che indica il numero di successive righe del file stesso (al più
+- sulla prima riga, un intero positivo che indica il numero di successive righe del file stesso (al più
 1000)
- nelle righe successive le informazioni sulle tratte, uno per riga, con formato:
-<codice_tratta><partenza><destinazione><data><ora_partenza><or
-a_arrivo><ritardo>
+- nelle righe successive le informazioni sulle tratte, uno per riga, con formato:
+<codice_tratta><partenza><destinazione><data><ora_partenza><ora_arrivo><ritardo>
 Tutte le stringhe sono lunghe al massimo 30 caratteri. Il ritardo è un numero intero, eventualmente nullo,
 a rappresentare i minuti di ritardo accumulati dalla corsa.
 Si scriva un programma C in grado di rispondere alle seguenti interrogazioni:
@@ -25,9 +24,9 @@ Si utilizzi la strategia di codifica dei comandi mediante tipo enum comando_e, c
 r_date, r_partenza, r_capolinea, r_ritardo, r_ritardo_tot, r_fine, che consente
 menu basati su switch-case.
 Si consiglia di:
- realizzare una funzione leggiComando che, acquisito in modo opportuno il comando, ritorni
+- realizzare una funzione leggiComando che, acquisito in modo opportuno il comando, ritorni
 il corrispondente valore di tipo comando_e
- realizzare una funzione selezionaDati che, ricevuti tra i parametri la tabella, la dimensione
+- realizzare una funzione selezionaDati che, ricevuti tra i parametri la tabella, la dimensione
 della tabella e il tipo di comando, gestisca mediante menu l’acquisizione delle informazioni
 aggiuntive necessarie per quel comando e la chiamata di un’opportuna funzione di selezione e
 stampa dei dati selezionati.
