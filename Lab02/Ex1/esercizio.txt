@@ -1,0 +1,43 @@
+Dati 2 interi positivi a e b, il loro massimo comun divisore (gcd(a,b)) si definisce
+ricorsivamente come:
+2*gcd(a/2;b/2) se a,b pari
+gcd(a, b/2) se a dispari, b pari
+gcd(a/2, b) se a pari, b dispari (aggiunta da soluzione -> semplice controllo di rimozione del fattore 2 nel MCD)
+gcd((a-b)/2, b) se a, b dispari
+
+Si individui un’opportuna condizione di terminazione e si scriva una funzione ricorsiva int
+gcd(int a, int b); che realizzi la definizione di cui sopra. Si ricordi che nel calcolo del
+massimo comun divisore si assume che a > b. Per tener conto di tale condizione, se non
+soddisfatta, si scambiano a e b.
+
+massimo comune divisore (base): 36 - 27: numero b divisibile per: 9, 3, 1 numbero a divisibile per: 9, 4, 3, 1 MCD = 9;
+
+36 - 27 -> 18 - 27 -> 27 - 18 -> 27 - 9 -> 27 - 9 / 2, 9 -> 9 - 9 = 0
+4 - 3 -> 2 - 3 -> 3 - 2 -> 3 - 1 -> 3 -1/2, 1 -> 1 - 1 = 0
+
+controllo numero a
+    controllo numero b
+    caso terminazione
+        se a - b = 0
+            return b
+    caso non terminazione
+        caso a, b pari
+            return 2*gcd(a/2,b/2)
+        caso a pari, b dispari
+            return gcd(a/2, b)
+        caso a dispari, b pari
+            return gcd(a, b/2)
+        caso a, b dispari
+            return ((a-b)/2, b)
+
+controllo pari/dispari
+
+min(36, 27)
+    if(even, odd){
+        
+    }
+    if (even)
+    if (odd)
+    if (odd, even)
+
+    
