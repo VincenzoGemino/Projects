@@ -3,12 +3,16 @@
 
 int mincd(int a, int b){
     int tmp;
+
+    //cambio se b > a
     if(b > a){
         tmp = a;
         a = b;
         b = tmp;
     }
-    if (a - b = 0){ //terminazione
+
+    //terminazione
+    if (a - b == 0){ 
         return b;
     }
 
@@ -21,7 +25,7 @@ int mincd(int a, int b){
             mincd(a/2, b);
         }
     }
-    elseif(a % 2 != 0){
+    if(a % 2 != 0){
         if(b % 2 == 0){
             mincd(a, b/2);
         }
@@ -45,3 +49,6 @@ int main(){
 
     return 0;
 }
+
+//risoluzione errata: occorreva verificare che per ogni singolo caso ci fosse un return, altrimenti occorre un puntatore per la modifica di tmp
+//altra problematica: riguardare la soluzione ritornata
