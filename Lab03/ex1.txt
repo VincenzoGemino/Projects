@@ -1,0 +1,7 @@
+risoluzione tramite ricorsione:
+
+int vet[N];
+nMag  <-> nOcc > N\2;
+int majority(int *a, int N);
+
+
