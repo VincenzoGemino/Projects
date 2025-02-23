@@ -1,4 +1,4 @@
-#include "act.h"
+#include "ACT.h"
 #include <string.h>
 
 int main(void) {
@@ -22,32 +22,17 @@ int main(void) {
     
     // Creazione delle attività
     int numAttivita = 8;
-    Attivita attivita[] = {
-        {"A1A",   1,  4,  12, -1},
-        {"BB75", 12, 14, 270, -1},
-        {"AB12B", 0,  6, 201, -1},
-        {"ADD",   5,  7,  45, -1},
-        {"A4",    3,  5,  36, -1},
-        {"CNT3",  5,  9,  74, -1},
-        {"T3B",   8, 11, 130, -1},
-        {"YA",    6, 10, 103, -1}
-    };
+   Attivita attivita[] = {{"A1A", 1, 4, 12}, {"BB75", 12, 14, 270}, {"AB12B", 0, 6, 201}, {"ADD", 5, 7, 45}, {"A4", 3, 5, 36}, {"CNT3", 5, 9, 74}, {"T3B", 8, 11, 130}, {"YA", 6, 10, 103}};
     
     // Creazione delle dipendenze
     int numDipendenze = 4;
-    Dipendenza dipendenze[] = {
-        {3, 0},  // ADD dipende da A1A
-        {6, 3},  // T3B dipende da ADD
-        {6, 2},  // T3B dipende da AB12B
-        {5, 4}   // CNT3 dipende da A4
-    };
+    Dipendenza dipendenze[] = {{3,0},{6,3},{6,2},{5,4}};
     
     // Inizializzazione della struttura ACT
     ACT a;
-    a.act = attivita;
-    a.nAtt = numAttivita;
-    a.dip = dipendenze;
-    a.nDip = numDipendenze;
+    a = ACTinit(numAttivita, numDipendenze);
+    a->act = attivita;
+    a->dip = dipendenze;
     
     // Verifica delle dipendenze
     if (!ACTcheckDep(a)) {

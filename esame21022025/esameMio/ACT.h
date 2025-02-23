@@ -6,28 +6,30 @@
 
 #define MAXC 21  // 20 caratteri + '\0'
 
-typedef struct elAttività *ACT;
-
-typedef struct elAttività{
-    attività *act;  // vettore delle attività
-    dipendenza *dip;    // vettore delle dipendenze
-    int nAtt;   // numero attività
-    int nDip;   // numero dipendenze
-};
-
 typedef struct {
     char nome[MAXC]; // nome attività
     int tIni;      // tempo di inizio
     int tFin;        // tempo di fine
     int costo;       // costo dell'attività
     int assegnatoA; // indice della persona assegnata (inserita per la funzione ACTbestPlan)
-} Attivita;
+}Attivita;
+
 
 typedef struct { //Cambio dal nome dell'attività all'indice delle attività per ottimizzazione
     int succ; // nome dell’attività che dipende
     int preced;   // nome dell’attività da cui dipende
-} Dipendenza;
+}Dipendenza;
 
+typedef struct elAttivita{
+    Attivita *act;  // vettore delle attività
+    Dipendenza *dip;    // vettore delle dipendenze
+    int nAtt;   // numero attività
+    int nDip;   // numero dipendenze
+};
+
+typedef struct elAttivita *ACT;
+
+ACT ACTinit(int nAttiv, int nDipend);
 
 /* Prototipi delle funzioni richieste */
 
