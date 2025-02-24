@@ -47,4 +47,6 @@ int ACTminPers(ACT a);
 // "assegnatoA" di ciascuna attività.
 void ACTbestPlan(ACT a);
 
+void ACTfree(ACT a);
+
 #endif // ACT_H

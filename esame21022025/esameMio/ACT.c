@@ -114,7 +114,7 @@ void ACTprintSrcSnk(ACT a) {
 
 int ACTminPers(ACT a) {
     int nEventi = 2 * a->nAtt;
-    Evento *eventi = malloc(nEventi * sizeof(Evento)); //creo una lista di eventi da ordinare
+    Evento *eventi = malloc(nEventi * sizeof(Evento)); //utilizzo
     int ind = 0;
     for (int i = 0; i < a->nAtt; i++) {
         eventi[ind].tempo = a->act[i].tIni;
@@ -125,7 +125,7 @@ int ACTminPers(ACT a) {
         ind++;
     }
     
-    quicSsortEv(eventi, nEventi, sizeof(Evento), cmpEvento);
+    qsort(eventi, nEventi, sizeof(Evento), cmpEvento);
     
     int curr = 0, maxPersone = 0;
     for (int i = 0; i < nEventi; i++) {
