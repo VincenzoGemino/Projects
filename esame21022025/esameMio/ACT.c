@@ -12,6 +12,11 @@ ACT ACTinit(int nAttiv, int nDipend){
     return a;
 }
 
+void ACTfree(ACT a){
+    free(a->act);
+    free(a->dip);
+}
+
 typedef struct { // struttura dati per implementare un evento
     int tempo;
     int tipoT; // +1: inizio, -1: fine
@@ -109,7 +114,7 @@ void ACTprintSrcSnk(ACT a) {
 
 int ACTminPers(ACT a) {
     int nEventi = 2 * a->nAtt;
-    Evento *eventi = malloc(nEventi * sizeof(Evento));
+    Evento *eventi = malloc(nEventi * sizeof(Evento)); //creo una lista di eventi da ordinare
     int ind = 0;
     for (int i = 0; i < a->nAtt; i++) {
         eventi[ind].tempo = a->act[i].tIni;
@@ -120,7 +125,7 @@ int ACTminPers(ACT a) {
         ind++;
     }
     
-    qsort(eventi, nEventi, sizeof(Evento), cmpEvento);
+    quicSsortEv(eventi, nEventi, sizeof(Evento), cmpEvento);
     
     int curr = 0, maxPersone = 0;
     for (int i = 0; i < nEventi; i++) {
