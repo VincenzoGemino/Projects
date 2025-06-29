@@ -4,6 +4,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <object.c>
- 
 
- typdef struct objects* oggetti;
+ typedef struct objects* oggetti;
+
+ #endif
