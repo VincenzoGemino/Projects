@@ -1,0 +1,109 @@
+/* Stile base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #fff8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #f4d9b0;
+  }
+  
+  #header-img {
+    height: 50px;
+  }
+  
+  #nav-bar {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  main {
+    padding-top: 100px;
+  }
+  
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .servizi-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .servizio {
+    background-color: #ffe9cc;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  #email {
+    padding: 10px;
+    width: 250px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #submit {
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  #submit:hover {
+    background-color: #e76f51;
+  }
+  
+  /* Media Query per dispositivi mobili */
+  @media (max-width: 600px) {
+    #nav-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .servizi-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #video {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
