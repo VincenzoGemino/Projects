@@ -1,0 +1,37 @@
+Esercizio n.2: Allocazione di matrici
+Competenze: Strutture dati dinamiche, matrici dinamiche create da funzioni (Puntatori e strutture
+dati dinamiche: 3.3.3)
+
+Un file di testo contiene una matrice di interi con il seguente formato:
+- la prima riga del file specifica le dimensioni della matrice (numero di righe nr e numero di
+colonne nc)
+int dimMat[2];
+int mat[nr][nc];
+- ciascuna delle nr righe successive contiene gli nc valori corrispondenti a una riga della
+matrice, separati da uno o più spazi.
+char line;
+void trimLineInt(line);
+
+Si scriva un programma che allochi dinamicamente la matrice ed effettui la lettura del file. La
+funzione di allocazione della matrice può:
+- far uso del valore di ritorno per restituire il puntatore alla matrice al main
+int **malloc2dR(...);
+
+int **mal
+- restituire il puntatore alla matrice tra i parametri passati per riferimento
+void malloc2dP(int***,...);
+
+
+Una volta acquisita la matrice, il programma deve invocare una funzione
+void separa(int **mat, int nr, int nc, ...)
+che:
+- interpreti la matrice come se fosse una scacchiera (su ogni riga e su ogni colonna celle bianche
+e nere alternate)
+- separi i dati delle caselle nere da quelli delle caselle bianche, copiandoli (in ordine arbitrario)
+in due vettori dinamici, che vanno ritornati al programma chiamante
+- i due vettori di interi, di lunghezza opportuna e tale da poter contenere gli elementi delle "celle
+bianche" e delle "celle nere" separatamente, vanno allocati dinamicamente
+03AAX ALGORITMI E STRUTTURE DATI CORSO DI LAUREA IN INGEGNERIA INFORMATICA A.A. 2024/25
+- i due vettori e i loro contenuti devono essere visibili al chiamante della funzione
+separa()(andranno quindi dichiarati in modo opportuno, al posto dei puntini …), che li
+stampa e li dealloca. 

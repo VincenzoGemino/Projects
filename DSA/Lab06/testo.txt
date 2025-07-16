@@ -1,0 +1,63 @@
+dati:
+file di testo pg.txt con:
+    numero personaggi non noto a priori
+    per ogni riga:
+        codice identificativo univoco (PGXXXX - con x compreso tra 0 e 9)
+        nome personaggio (stringa da massimo 50)
+        classe  (stringa da massimo 50)
+        hp      int >=0
+        mp      int >=0
+        atk     int >=0
+        def     int >=0
+        mag     int >=0
+        spr     int >=0
+        tutti i campi sono separati da spazi (>= 1)
+
+file di testo inventario.txt con:
+    prima riga:
+        Numero oggetti O
+    righe successive pari ad O:
+        nome oggetto (stringa da massimo 50)
+        tipologia    (stringa da massimo 50)
+        hp  bonus      (se int > 0) malus (se int < 0)
+        mp  bonus      (se int > 0) malus (se int < 0)
+        atk bonus      (se int > 0) malus (se int < 0)
+        def bonus      (se int > 0) malus (se int < 0)
+        mag bonus      (se int > 0) malus (se int < 0)
+        spr bonus      (se int > 0) malus (se int < 0)
+
+equipaggiamento con:
+    numero oggetti da inventario = 8
+
+verifica delle strutture dati su immagine fornita su pdf
+strutture wrapper per la memorizzazione delle collezioni
+
+programma in grado di:
+    caricamento in una lista l'elenco dei personaggi
+    caricamento in un vettore di strutture allocato dinamicamente l'elenco di oggetti
+    aggiunta personaggio
+    eliminazione personaggio
+    aggiunta/rimozione oggetto dall'equipaggiamento
+    calcolare le statistiche unendo parametri base ed equipaggiamento
+        se caratteristica totale inferiore allo 0, impostarla a 0
+
+Organizzazione in moduli del programma:
+    modulo client contenente main e l'interfaccia utente/menu
+    modulo gestione personaggi con le seguenti funzionalità
+        acquisizione da file delle informazioni dei personaggi (mantenere la stessa struttura a lista del lab precedente ?)
+        inserimento/cancellazione di un personaggio
+        ricerca per codice personaggio
+        stampa dettagli personaggio ed equipaggiamento se presente
+        modifica dell'equipaggiamento
+            aggiunta\rimozione di un oggetto dal pg
+    modulo gestione inventario
+        acquisizione da file delle informazioni relative agli oggetti disponibili (mantenere la stessa struttura a lista del lab precedente ?)
+        ricerca di un oggetto per nome
+        stampa dettagli di un oggetto
+
+    il modulo personaggi è client del modulo inventario, in quanto ogni personaggio ha una collezione di (riferimenti a) dati contenuti nell'inventario
+
+
+
+
+        
