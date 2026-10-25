@@ -1,0 +1,17 @@
+individuazione di tutti gli insiemi di archi di cardinalità minima la cui rimozione renda il grafo originale un DAG:
+    Problema di feedback arc set:
+    Trovare i cicli
+        verifico se il nodo attuale ha più puntamenti, in caso positivo:
+            tentare, togliendo l'arco singolo verifico se ottengo un DAG
+                ricorro: tentare, togliendo l'arco sinoglo e verifico se ottengo un DAG
+
+    Struttura dati:
+        array dei nodi
+        array degli archi
+        array della soluzione (tutti gli insiemi, forse è un array di array?)
+
+    Funzioni:
+        costruisciDAG(FILE *fp)
+        check_ciclo(graph G, int N)
+        verificaDAG(graph *G, int N, int *sol)
+        verificaDAGR(graph *G, int N, int *sol, int curr, int pos)
