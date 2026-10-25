@@ -1,0 +1,79 @@
+### File Compilati e Pacchetti ###
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Escludi il jar del wrapper, ma mantieni gli script mvnw
+.mvn/wrapper/maven-wrapper.jar
+
+### Gradle (se usi Gradle) ###
+.gradle/
+build/
+
+# Mantieni il wrapper di gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+### Log ###
+*.log
+logs/
+
+### Configurazioni Sensibili e Segreti ###
+.env
+*.pem
+*.key
+application-secret.yml
+application-secret.properties
+
+### File Temporanei OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/

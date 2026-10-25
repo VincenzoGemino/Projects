@@ -1,0 +1,54 @@
+TEMA D'ESAME: Sistema Gestionale "AquaLife Network"
+
+Obiettivo: Sviluppare il back-end di un gestionale per un'azienda che possiede diversi stabilimenti con piscine. Il sistema deve gestire la logistica (strutture, personale, corsi e manutenzione) e l'interfaccia con i clienti (prenotazioni, tipologie di abbonamento).
+PARTE 1: Progettazione e Schema E-R (Valutazione: 4 Punti)
+
+Nota per lo studente: Tradurre mentalmente questo schema in un diagramma delle classi Java.
+
+Entità e Relazioni (Schema E-R concettuale):
+
+    Stabilimento (1) -- (N) Piscina: Uno stabilimento ha più piscine.
+
+    Lavoratore: Generalizzazione di Addetto e Istruttore.
+
+    Piscina (1) -- (N) Manutenzione: Una piscina può avere più fasce orarie di manutenzione.
+
+    Piscina (1) -- (N) Corso: Una piscina ospita vari corsi.
+
+    Istruttore (1) -- (N) Corso: Un istruttore tiene più corsi.
+
+    Cliente (1) -- (N) Prenotazione: Un cliente può effettuare più prenotazioni (per un Corso o per una sessione libera in Piscina).
+
+    Tipologia Cliente: Enumerazione (SINGOLO, GRUPPO, SCOLASTICO, UNIVERSITARIO).
+
+PARTE 2: Implementazione del Modello Dati (Valutazione: 6 Punti)
+
+Implementare le classi di base (POJO/Record), le enumerazioni e i principi dell'Ereditarietà.
+
+    Vincoli: Utilizzare l'incapsulamento corretto. Si consiglia l'uso di Record in Java 14+ per le entità immutabili, o classi standard con costruttori, getter e setter.
+
+    Task: Creare le classi Stabilimento, Piscina, Lavoratore (con sottoclassi o Enum), Cliente, Corso, Prenotazione, Manutenzione.
+
+PARTE 3: Gestione delle Collezioni (Valutazione: 8 Punti)
+
+Creare una classe GestoreAquaLife che funga da database in memoria e offra metodi per popolare i dati.
+
+    Task 1: Utilizzare List, Set e Map per immagazzinare Stabilimenti, Clienti, e Prenotazioni in modo efficiente.
+
+    Task 2: Implementare un metodo aggiungiPrenotazione(...) che lanci una PrenotazioneException (da definire) se c'è una sovrapposizione con un orario di manutenzione della piscina, o se l'istruttore è già occupato in un altro corso in quell'orario.
+
+PARTE 4: Elaborazione Dati con Java Streams API (Valutazione: 14 Punti)
+
+Implementare i seguenti metodi nella classe GestoreAquaLife utilizzando esclusivamente gli Stream e le Lambda Expressions (nessun ciclo for o while esplicito).
+
+    Map<TipoCliente, Long> contaClientiPerTipologia() (3 pt):
+    Ritorna una mappa contenente il numero di clienti registrati per ogni tipologia (es. 10 Universitari, 5 Gruppi).
+
+    List<Istruttore> istruttoriLiberi(LocalDateTime inizio, LocalDateTime fine) (3 pt):
+    Ritorna una lista di istruttori che non hanno corsi assegnati nella fascia oraria specificata.
+
+    Map<Istruttore, Double> calcolaIntroitiPerIstruttore(YearMonth mese) (4 pt):
+    Richiesta avanzata: Calcolare quanti soldi ha generato ogni istruttore in un dato mese. L'introito di un istruttore è dato dalla somma del prezzo dei suoi corsi moltiplicato per il numero di prenotazioni attive per quei corsi in quel mese.
+
+    Piscina piscinaPiuProblematiche(Stabilimento s) (4 pt):
+    Ritorna la piscina di uno specifico stabilimento che ha accumulato il maggior tempo totale (in ore) di manutenzione.
